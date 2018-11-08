@@ -38,106 +38,105 @@ a={'1':'jedan',
    '900':'devetsto',
    '0':''}
 b=[]
-broj=input()
-duzinaBroja=len(broj)
-broj=int(broj)
-milijarda=broj//1000000000
-milioni=(broj//1000000)%1000
-hiljade=(broj//1000)%1000
-ostatak=broj%1000
-if milijarda>0:
-    if milijarda==1:
+number=input()
+numberLength=len(number)
+number=int(number)
+billion=number//1000000000
+million=(number//1000000)%1000
+thousand=(number//1000)%1000
+remainder=number%1000
+if billion>0:
+    if billion==1:
         b.append('jedna')
         b.append('milijarda')
-    if milijarda==2 or milijarda==3 or milijarda==4:
-        b.append(str(milijarda))
+    if billion==2 or billion==3 or billion==4:
+        b.append(str(billion))
         b.append('milijarde')
-    if milijarda>4:
-        b.append(str(milijarda))
+    if billion>4:
+        b.append(str(billion))
         b.append('milijardi')
-if milioni>0:
-    stoticeMiliona=milioni//100
-    stoticeMiliona=stoticeMiliona*100
-    if stoticeMiliona>0:
-        stoticeMiliona=str(stoticeMiliona)
-        b.append(stoticeMiliona)
-    if (milioni//10)%10==1:
-        deseticeMiliona=milioni%100
-        deseticeMiliona=str(deseticeMiliona)
-        b.append(deseticeMiliona)
+if million>0:
+    hundredMillion=million//100
+    hundredMillion=hundredMillion*100
+    if hundredMillion>0:
+        hundredMillion=str(hundredMillion)
+        b.append(hundredMillion)
+    if (million//10)%10==1:
+        tenMillion=million%100
+        tenMillion=str(tenMillion)
+        b.append(tenMillion)
         b.append('miliona')
     else:
-        deseticeMiliona=(milioni//10)%10
-        deseticeMiliona=deseticeMiliona*10
-        if deseticeMiliona>0:
-            deseticeMiliona=str(deseticeMiliona)
-            b.append(deseticeMiliona)
-        jediniceMiliona=milioni%10
-        if jediniceMiliona>0:
-            jediniceMiliona=str(jediniceMiliona)
-            b.append(jediniceMiliona)
-            jediniceMiliona=int(jediniceMiliona)
-            if jediniceMiliona==1:
+        tenMillion=(million//10)%10
+        tenMillion=tenMillion*10
+        if tenMillion>0:
+            tenMillion=str(tenMillion)
+            b.append(tenMillion)
+        oneMillion=million%10
+        if oneMillion>0:
+            oneMillion=str(oneMillion)
+            b.append(oneMillion)
+            oneMillion=int(oneMillion)
+            if oneMillion==1:
                 b.append('milion')
-            if jediniceMiliona>1 and jediniceMiliona<5:
+            if oneMillion>1 and oneMillion<5:
                 b.append('miliona')
-            if jediniceMiliona>4:
+            if oneMillion>4:
                 b.append('miliona')
-        if jediniceMiliona==0:
+        if oneMillion==0:
             b.append('miliona')
-if hiljade>0:
-    stoticeHiljada=hiljade//100
-    stoticeHiljada=stoticeHiljada*100
-    if stoticeHiljada>0:
-        stoticeHiljada=str(stoticeHiljada)
-        b.append(stoticeHiljada)
-    if (hiljade//10)%10==1:
-        deseticeHiljada=hiljade%100
-        deseticeHiljada=str(deseticeHiljada)
-        b.append(deseticeHiljada)
+if thousand>0:
+    hundredThousand=thousand//100
+    hundredThousand=hundredThousand*100
+    if hundredThousand>0:
+        hundredThousand=str(hundredThousand)
+        b.append(hundredThousand)
+    if (thousand//10)%10==1:
+        tenThousand=thousand%100
+        tenThousand=str(tenThousand)
+        b.append(tenThousand)
         b.append('hiljada')
     else:
-        deseticeHiljada=(hiljade//10)%10
-        deseticeHiljada=deseticeHiljada*10
-        if deseticeHiljada>0:
-            deseticeHiljada=str(deseticeHiljada)
-            b.append(deseticeHiljada)
-        jediniceHiljada=hiljade%10
-        if jediniceHiljada>0:
-            if jediniceHiljada==1:
+        tenThousand=(thousand//10)%10
+        tenThousand=tenThousand*10
+        if tenThousand>0:
+            tenThousand=str(tenThousand)
+            b.append(tenThousand)
+        oneThousand=thousand%10
+        if oneThousand>0:
+            if oneThousand==1:
                 b.append('jedna')
                 b.append('hiljada_z')
-            if jediniceHiljada>1 and jediniceHiljada<5:
-                b.append(str(jediniceHiljada))
+            if oneThousand>1 and oneThousand<5:
+                b.append(str(oneThousand))
                 b.append('hiljade')
-            if jediniceHiljada>4:
-                b.append(str(jediniceHiljada))
+            if oneThousand>4:
+                b.append(str(oneThousand))
                 b.append('hiljada')
-        if jediniceHiljada==0:
+        if oneThousand==0:
             b.append('hiljada')
-if ostatak>0:
-    stoticeOstatka=ostatak//100
-    stoticeOstatka=stoticeOstatka*100
-    if stoticeOstatka>0:
-        stoticeOstatka=str(stoticeOstatka)
-        b.append(stoticeOstatka)
-    if (ostatak//10)%10==1:
-        deseticeOstatka=ostatak%100
-        deseticeOstatka=str(deseticeOstatka)
-        b.append(deseticeOstatka)
+if remainder>0:
+    hundredRemainder=remainder//100
+    hundredRemainder=hundredRemainder*100
+    if hundredRemainder>0:
+        hundredRemainder=str(hundredRemainder)
+        b.append(hundredRemainder)
+    if (remainder//10)%10==1:
+        tenRemainder=remainder%100
+        tenRemainder=str(tenRemainder)
+        b.append(tenRemainder)
     else:
-        deseticeOstatka=(ostatak//10)%10
-        deseticeOstatka=deseticeOstatka*10
-        if deseticeOstatka>0:
-            deseticeOstatka=str(deseticeOstatka)
-            b.append(deseticeOstatka)
-        jediniceOstatka=ostatak%10
-        if jediniceOstatka>0:
-            b.append(str(jediniceOstatka))
+        tenRemainder=(remainder//10)%10
+        tenRemainder=tenRemainder*10
+        if tenRemainder>0:
+            tenRemainder=str(tenRemainder)
+            b.append(tenRemainder)
+        oneRemainder=remainder%10
+        if oneRemainder>0:
+            b.append(str(oneRemainder))
 
 for i in range(len(b)):
     if b[i] not in a:
         winsound.PlaySound(b[i] + ".wav",winsound.SND_FILENAME)
     else:
         winsound.PlaySound(a[b[i]]+".wav",winsound.SND_FILENAME)
-    
