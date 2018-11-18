@@ -60,7 +60,7 @@ if million > 0:
     if hundredMillion > 0:
         wordedNumber.append(str(hundredMillion))
     if (million // 10) % 10 == 1:
-        tenMillion = str(tenMillion % 100)
+        tenMillion = str(million % 100)
         wordedNumber.extend((tenMillion, 'miliona'))
     else:
         tenMillion = (million // 10) % 10
@@ -84,7 +84,7 @@ if thousand > 0:
     if hundredThousand > 0:
         wordedNumber.append(str(hundredThousand))
     if (thousand // 10) % 10 == 1:
-        tenThousand = str(tenThousand % 100)
+        tenThousand = str(thousand % 100)
         wordedNumber.extend((tenThousand, 'hiljada'))
     else:
         tenThousand = (thousand // 10) % 10
@@ -107,7 +107,7 @@ if remainder > 0:
     if hundredRemainder > 0:
         wordedNumber.append(str(hundredRemainder))
     if (remainder // 10) % 10 == 1:
-        tenRemainder = str(tenRemainder % 100)
+        tenRemainder = str(remainder % 100)
         wordedNumber.append(tenRemainder)
     else:
         tenRemainder = (remainder // 10) % 10
